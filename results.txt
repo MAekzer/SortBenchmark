@@ -186,6 +186,49 @@ is not more than O(n) (which is acceptable) and Count sorts performs better, whe
 and k is the difference between min and max elements of an array. Therefore it would make sense to use Count sort for sorting array of integers
 with number of elements higher than difference between min and max of its elements.
 
+Final result:
+
+Results for different sorting algorithms performed on a vector of size 100 with difference between min and max being 200 : 
+     Quicksort hybrid (on data with small standard error) : 11 microseconds.
+           Count sort (on data with small standard error) : 10 microseconds.
+                 Sort (on data with small standard error) : 12 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 with difference between min and max being 200 : 
+     Quicksort hybrid (on data with small standard error) : 194 microseconds.
+           Count sort (on data with small standard error) : 53 microseconds.
+                 Sort (on data with small standard error) : 60 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 200 : 
+     Quicksort hybrid (on data with small standard error) : 2577 microseconds.
+           Count sort (on data with small standard error) : 483 microseconds.
+                 Sort (on data with small standard error) : 532 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 with difference between min and max being 2000 : 
+     Quicksort hybrid (on data with small standard error) : 194 microseconds.
+           Count sort (on data with small standard error) : 73 microseconds.
+                 Sort (on data with small standard error) : 198 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 2000 : 
+     Quicksort hybrid (on data with small standard error) : 2590 microseconds.
+           Count sort (on data with small standard error) : 480 microseconds.
+                 Sort (on data with small standard error) : 553 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 5000 :
+     Quicksort hybrid (on data with small standard error) : 2601 microseconds.
+           Count sort (on data with small standard error) : 560 microseconds.
+                 Sort (on data with small standard error) : 618 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 10000 :
+     Quicksort hybrid (on data with small standard error) : 2558 microseconds.
+           Count sort (on data with small standard error) : 563 microseconds.
+                 Sort (on data with small standard error) : 637 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 50000 :
+     Quicksort hybrid (on data with small standard error) : 2550 microseconds.
+           Count sort (on data with small standard error) : 835 microseconds.
+                 Sort (on data with small standard error) : 2637 microseconds.
+
+Final variant of sorting algorithm works a little slower due to extra calculations but it always performs well and has maximum time complexity of O(n).
 
 
  
