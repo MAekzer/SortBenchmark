@@ -1,0 +1,191 @@
+Test 1. Only pure sorting algorithms
+
+Results for different sorting algorithms performed on a vector of size 10 : 
+                                 Insertion sort : 0 microseconds.
+                                    Bubble sort : 0 microseconds.
+                                     Merge sort : 4 microseconds.
+                                      Quicksort : 0 microseconds.
+ Count sort (on data with small standard error) : 2 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 25 : 
+                                 Insertion sort : 3 microseconds.
+                                    Bubble sort : 4 microseconds.
+                                     Merge sort : 12 microseconds.
+                                      Quicksort : 1 microseconds.
+ Count sort (on data with small standard error) : 3 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 50 : 
+                                 Insertion sort : 14 microseconds.
+                                    Bubble sort : 19 microseconds.
+                                     Merge sort : 26 microseconds.
+                                      Quicksort : 4 microseconds.
+ Count sort (on data with small standard error) : 5 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 200 : 
+                                 Insertion sort : 216 microseconds.
+                                    Bubble sort : 276 microseconds.
+                                     Merge sort : 111 microseconds.
+                                      Quicksort : 27 microseconds.
+ Count sort (on data with small standard error) : 10 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 : 
+                                 Insertion sort : 4843 microseconds.
+                                    Bubble sort : 6671 microseconds.
+                                     Merge sort : 612 microseconds.
+                                      Quicksort : 184 microseconds.
+ Count sort (on data with small standard error) : 31 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 : 
+                                     Merge sort : 6902 microseconds.
+                                      Quicksort : 2582 microseconds.
+ Count sort (on data with small standard error) : 307 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 100000 : 
+                                     Merge sort : 73865 microseconds.
+                                      Quicksort : 33253 microseconds.
+ Count sort (on data with small standard error) : 2796 microseconds.
+
+ Conclusions:
+ 1. Out of algorithms with square time complexity Insertion sort has better performance, so it will be used to complement
+ quick comparison algorithms.
+ 2. Count sort on specific data beats Quicksort roughly at number of elements n > 50.
+ 3. Pure Quicksort beats pure Merge sort at any given number of elements.
+
+ "Merge sort can be made more efficient by replacing recursive calls with Insertion sort for smaller array sizes,
+  where the size of the remaining array is less or equal to 43 as the number of operations required to sort
+  an array of max size 43 will be less in Insertion sort as compared to the number of operations required in Merge sort."
+  Source - https://www.geeksforgeeks.org/merge-sort/
+  
+ Although benchmark algorithm is not precise enough to show difference between Insertion sort and Quicksort for n = 10,
+ we know that in many programming languages Quicksort is replaced by Insertion sort for n < 10 in standard sort function.
+
+ Test 2. Two hybrid algorithms and pure Count sort
+
+ Results for different sorting algorithms performed on a vector of size 10 : 
+                                     Merge sort : 0 microseconds.
+                                      Quicksort : 0 microseconds.
+ Count sort (on data with small standard error) : 2 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 25 : 
+                                     Merge sort : 3 microseconds.
+                                      Quicksort : 1 microseconds.
+ Count sort (on data with small standard error) : 3 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 50 : 
+                                     Merge sort : 8 microseconds.
+                                      Quicksort : 4 microseconds.
+ Count sort (on data with small standard error) : 5 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 100 : 
+                                     Merge sort : 20 microseconds.
+                                      Quicksort : 11 microseconds.
+ Count sort (on data with small standard error) : 7 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 200 : 
+                                     Merge sort : 46 microseconds.
+                                      Quicksort : 28 microseconds.
+ Count sort (on data with small standard error) : 10 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 : 
+                                     Merge sort : 289 microseconds.
+                                      Quicksort : 193 microseconds.
+ Count sort (on data with small standard error) : 30 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 : 
+                                     Merge sort : 4067 microseconds.
+                                      Quicksort : 2584 microseconds.
+ Count sort (on data with small standard error) : 322 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 100000 : 
+                                     Merge sort : 42302 microseconds.
+                                      Quicksort : 32727 microseconds.
+ Count sort (on data with small standard error) : 2703 microseconds.
+
+ Conclusions:
+ 1. Hybrid of Merge sort and Insertion sort is much faster than pure Merge sort.
+ 2. Hybrid of Quicksort and Insertion sort is roughly the same as pure Quicksort.
+ 3. Hybrid of Quicksort and Insertion sort is faster than hybrid of Merge sort and Insertion sort for any given number of elements.
+ 4. Count sort on specific data still beats Hybrid of Quicksort and Insertion sort roughly at number of elements n > 50.
+
+ Although hybrid of Quicksort and Insertion sort is not faster than pure Quicksort on array with random data is will definitely be faster
+ on array with few inversions. Thus given Insertion sort does not slow down algorithm on random data, it would make sense to leave it
+ in the final iteration of sorting algorithm.
+
+ Now it is needed to find the difference between max and min elements of an array at which count sort performs better than Quicksort.
+
+ Test 3. Hybrid of Quicksort and Insertion sort vs Count sort.
+
+ Results for different sorting algorithms performed on a vector of size 100 with difference between min and max being 200 : 
+     Quicksort hybrid (on data with small standard error) : 11 microseconds.
+           Count sort (on data with small standard error) : 8 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 100 with difference between min and max being 500 : 
+     Quicksort hybrid (on data with small standard error) : 11 microseconds.
+           Count sort (on data with small standard error) : 10 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 100 with difference between min and max being 1000 : 
+     Quicksort hybrid (on data with small standard error) : 11 microseconds.
+           Count sort (on data with small standard error) : 12 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 100 with difference between min and max being 5000 : 
+     Quicksort hybrid (on data with small standard error) : 11 microseconds.
+           Count sort (on data with small standard error) : 35 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 100 with difference between min and max being 10000 : 
+     Quicksort hybrid (on data with small standard error) : 11 microseconds.
+           Count sort (on data with small standard error) : 72 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 with difference between min and max being 200 : 
+     Quicksort hybrid (on data with small standard error) : 193 microseconds.
+           Count sort (on data with small standard error) : 35 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 with difference between min and max being 1000 : 
+     Quicksort hybrid (on data with small standard error) : 197 microseconds.
+           Count sort (on data with small standard error) : 47 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 with difference between min and max being 5000 : 
+     Quicksort hybrid (on data with small standard error) : 203 microseconds.
+           Count sort (on data with small standard error) : 76 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 with difference between min and max being 10000 : 
+     Quicksort hybrid (on data with small standard error) : 200 microseconds.
+           Count sort (on data with small standard error) : 105 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 1000 with difference between min and max being 100000 : 
+     Quicksort hybrid (on data with small standard error) : 190 microseconds.
+           Count sort (on data with small standard error) : 632 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 200 : 
+     Quicksort hybrid (on data with small standard error) : 2586 microseconds.
+           Count sort (on data with small standard error) : 287 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 1000 : 
+     Quicksort hybrid (on data with small standard error) : 2610 microseconds.
+           Count sort (on data with small standard error) : 288 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 5000 : 
+     Quicksort hybrid (on data with small standard error) : 2508 microseconds.
+           Count sort (on data with small standard error) : 382 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 10000 :
+     Quicksort hybrid (on data with small standard error) : 2615 microseconds.
+           Count sort (on data with small standard error) : 433 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 100000 :
+     Quicksort hybrid (on data with small standard error) : 2615 microseconds.
+           Count sort (on data with small standard error) : 945 microseconds.
+
+Results for different sorting algorithms performed on a vector of size 10000 with difference between min and max being 1000000 :
+     Quicksort hybrid (on data with small standard error) : 2505 microseconds.
+           Count sort (on data with small standard error) : 7176 microseconds.
+
+It is clear that Count sort becomes more efficient relative to Quicksort hybrid the more elements there are in array therefore increasing 
+the difference between min and max elements of an array with which Count sort will perform better. However, unlike Quicksort hybrid Count sort
+allocates memory proportionally the difference that difference. We can also notice that for n >= k space complexity of an algorithm
+is not more than O(n) (which is acceptable) and Count sorts performs better, where n is the number of elements in an array
+and k is the difference between min and max elements of an array. Therefore it would make sense to use Count sort for sorting array of integers
+with number of elements higher than difference between min and max of its elements.
+
+
+
+ 
